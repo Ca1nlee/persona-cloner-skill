@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.DS_Store
+Thumbs.db
+/build/
+/dist/
+/repo-public/
