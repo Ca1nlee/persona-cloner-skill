@@ -1,55 +1,75 @@
-# persona-cloner
+# Persona Cloner
+
+<div align="center">
 
 Build an OpenClaw-ready **public-figure persona package** from documented public materials.
 
-## English
+<p>
+  <a href="./README.zh-CN.md">简体中文</a> |
+  <strong>English</strong>
+</p>
 
-### What this skill does
-`persona-cloner` helps an agent turn public interviews, writing, speeches, and other documented material into a runnable OpenClaw persona package. The default deliverable is a compact runtime folder with `SOUL.md`, `IDENTITY.md`, `AGENTS.md`, and `MEMORY.md`.
+<p>
+  <a href="./README.en.md#what-this-skill-does">What it does</a> •
+  <a href="./README.en.md#when-to-use-it">Use cases</a> •
+  <a href="./README.en.md#default-deliverables">Outputs</a> •
+  <a href="./README.en.md#install">Install</a> •
+  <a href="./README.en.md#validate">Validate</a> •
+  <a href="./README.en.md#safety-boundary">Safety boundary</a>
+</p>
 
-### When to use it
-Use this skill when you want an agent to answer in the style and decision frame of a public figure, while keeping clear source boundaries and avoiding generic assistant drift.
+</div>
 
-### What it outputs
-- A runtime persona package
-- Optional source and evaluation rails for traceability
-- Optional installation into an OpenClaw workspace
+---
 
-### Install into OpenClaw
-1. Copy this folder into your OpenClaw `skills/` directory as `persona-cloner`.
-2. Restart or reload OpenClaw if your setup requires it.
-3. Ask for a public-figure persona package built from public materials.
+## Quick overview
 
-### Validate the skill and its output
-- Scaffold a package: `python scripts/scaffold_persona_clone.py "Target Name" --out ./build --mode persona`
-- Validate a package: `python scripts/validate_persona_package.py ./build/target-name-persona`
-- Run behavior eval: `python scripts/eval_runtime_behavior.py run --package-dir ./build/target-name-persona --version candidate`
+`persona-cloner` helps an agent turn interviews, writing, speeches, and other public records into a directly runnable OpenClaw persona package.
 
-### Safety boundary
-This repo is for persona packages built from public materials. It does **not** grant private memory, secret access, endorsement, or live authority. Unknowns should stay unknown.
+The default deliverable is the runtime package itself, not a research dump.
 
-## 中文
+### Default outputs
 
-### 这个 skill 是做什么的
-`persona-cloner` 用来把公开人物的访谈、文章、演讲等公开材料，整理成一个可直接运行的 OpenClaw persona package。默认产物是一个精简运行目录，包含 `SOUL.md`、`IDENTITY.md`、`AGENTS.md`、`MEMORY.md`。
+- `SOUL.md`
+- `IDENTITY.md`
+- `AGENTS.md`
+- `MEMORY.md`
+- optional: `README-agent.md`
+- optional: installation into an OpenClaw workspace
 
-### 适用场景
-当你希望代理以某位公开人物的表达风格、判断框架和边界来回答问题，同时又要严格限定在公开资料范围内、避免泛化成默认助手口吻时，就使用这个 skill。
+### Best fit
 
-### 输出内容
-- 一个可运行的 persona package
-- 可选的来源整理与评测目录
-- 可选的 OpenClaw 安装步骤
+Use this skill when you want a package that:
 
-### 如何安装到 OpenClaw
-1. 将本目录复制到 OpenClaw 的 `skills/` 目录，并命名为 `persona-cloner`。
-2. 如果你的环境需要，重启或重新加载 OpenClaw。
-3. 直接提出“基于公开资料构建某位人物 persona package”的任务即可。
+- answers in the first-person voice of a public figure
+- preserves decision style, tone, and behavioral discipline
+- stays grounded in public materials instead of invented private access
+- resists generic assistant tone drift
 
-### 如何验证
-- 生成脚手架：`python scripts/scaffold_persona_clone.py "Target Name" --out ./build --mode persona`
-- 校验产物：`python scripts/validate_persona_package.py ./build/target-name-persona`
-- 运行行为评测：`python scripts/eval_runtime_behavior.py run --package-dir ./build/target-name-persona --version candidate`
+### Quick start
 
-### 安全边界
-本仓库只面向基于公开资料构建 persona package 的场景，不代表真实本人，不提供私有记忆、秘密信息、授权背书或实时权限；未知信息必须明确保持未知。
+```bash
+python scripts/scaffold_persona_clone.py "Target Name" --out ./build --mode persona
+python scripts/validate_persona_package.py ./build/target-name-persona
+python scripts/eval_runtime_behavior.py run --package-dir ./build/target-name-persona --version candidate
+```
+
+### Read in your language
+
+- English: [README.en.md](./README.en.md)
+- 简体中文: [README.zh-CN.md](./README.zh-CN.md)
+
+---
+
+## Repository highlights
+
+- `SKILL.md` — skill entry and operating rule
+- `references/` — workflow, output spec, boundary, evaluation, and extraction guidance
+- `scripts/` — scaffold, validate, evaluate, install, and memory helpers
+- `examples/` — sample persona package structure
+
+## Safety reminder
+
+This repository is for persona packages built from public materials. It does **not** imply endorsement, official authority, private memory, secret access, or live affiliation.
+
+Unknowns should stay unknown.
