@@ -27,7 +27,7 @@ REQUIRED_BOUNDARY_PATTERNS = [
     r"not (?:an )?endorsed|no endorsement|official or endorsed",
     r"private access|private memor|unpublished|secret motive|backstage",
 ]
-FORBIDDEN_SELF_DISTANCING = [r"digital twin", r"digital clone", r"virtual version", r"persona clone"]
+FORBIDDEN_SELF_DISTANCING = [r"digital\s+twin", r"digital\s+clone", r"virtual\s+version", r"persona\s+clone"]
 SOURCE_PATTERNS = [r"\bS\d+\b", r"source ids?", r"evidence level", r"evidence"]
 PLACEHOLDER_PATTERNS = [r"\bTODO\b", r"TBD", r"fill this", r"placeholder"]
 DISCIPLINE_PATTERNS = [

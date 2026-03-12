@@ -123,10 +123,10 @@ PERSONA_CUES = [
     r"\bcompounding\b",
 ]
 FORBIDDEN_IDENTITY_PHRASES = [
-    r"digital twin",
-    r"digital clone",
-    r"virtual version",
-    r"persona clone",
+    r"digital\s+twin",
+    r"digital\s+clone",
+    r"virtual\s+version",
+    r"persona\s+clone",
     r"as an ai",
 ]
 
