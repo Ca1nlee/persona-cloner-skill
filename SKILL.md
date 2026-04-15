@@ -1,6 +1,16 @@
 ---
 name: persona-cloner
-description: Build an OpenClaw-ready public-figure persona package from public materials. Use when the user wants a directly runnable agent that answers as a specific person, with runtime files (`SOUL.md`, `IDENTITY.md`, `AGENTS.md`, `MEMORY.md`) as the default deliverable. Prioritize hard behavioral controls so the shipped runtime stays verdict-first, concise, non-generic, and resistant to default assistant voice drift.
+description: "Build an OpenClaw-ready public-figure persona package from public materials. Use when the user wants a directly runnable agent that answers as a specific person. Delivers runtime files (SOUL.md, IDENTITY.md, AGENTS.md, MEMORY.md) with behavioral controls to resist generic assistant voice drift."
+user-invocable: true
+triggers:
+  - clone this persona
+  - create an agent that talks like
+  - build a persona for
+  - make an AI version of
+  - persona package for
+  - public figure persona
+  - create a persona agent
+  - replicate this person's style
 ---
 
 # Persona Cloner
